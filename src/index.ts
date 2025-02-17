@@ -14,6 +14,14 @@
 export const parseAtcf = (atcfText: string): AtcfFile =>
     new AtcfFile(atcfText);
 
+export interface IAtcfFile {
+    'data': IAtcfData[];
+    'genNo': number | null;
+    'invest': IAtcfFromTo | null;
+    'trans': IAtcfFromTo | null;
+    'diss': IAtcfFromTo | null;
+}
+
 export class AtcfFile {
 
     public readonly data: AtcfData[] = [];
@@ -40,9 +48,9 @@ export class AtcfFile {
         }
     }
 
-    public toJSON(): object {
+    public toJSON(): IAtcfFile {
         return {
-            'data': this.data,
+            'data': this.data.map(d => d.toJSON()),
             'genNo': this.genNo,
             'invest': this.invest,
             'trans': this.transitioned,
@@ -70,6 +78,39 @@ export interface IAtcfStormCode {
 export interface IAtcfFromTo {
     from: IAtcfStormCode | null,
     to: IAtcfStormCode | null
+}
+
+export interface IAtcfData {
+    'basin': string | null;
+    'stormNo': number | null;
+    'date': Date | null;
+    'techNum': string | null;
+    'tech': string | null;
+    'tau': number | null;
+    'lat': number | null;
+    'lon': number | null;
+    'maxSusWind': number | null;
+    'minSeaLevelPsur': number | null;
+    'level': string | null;
+    'windRad': IAtcfRad | null;
+    'outerPsur': number | null;
+    'outerRad': number | null;
+    'maxWindRad': number | null;
+    'windGust': number | null;
+    'eyeDia': number | null;
+    'subRegion': string | null;
+    'maxSeas': number | null;
+    'forecaster': string | null;
+    'dir': number | null;
+    'speed': number | null;
+    'name': string | null;
+    'depth': string | null;
+    'seaRad': IAtcfRad | null;
+    'userData': {[key: string]: string};
+    'genNo': number | null;
+    'invest': IAtcfFromTo | null;
+    'trans': IAtcfFromTo | null;
+    'diss': IAtcfFromTo | null;
 }
 
 export class AtcfData {
@@ -362,7 +403,7 @@ export class AtcfData {
         }
     }
 
-    public toJSON(): object {
+    public toJSON(): IAtcfData {
         return {
             'basin': this.basin,
             'stormNo': this.stormNo,
