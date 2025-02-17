@@ -83,7 +83,7 @@ export interface IAtcfFromTo {
 export interface IAtcfData {
     'basin': string | null;
     'stormNo': number | null;
-    'date': Date | null;
+    'date': string | null;
     'techNum': string | null;
     'tech': string | null;
     'tau': number | null;
@@ -91,6 +91,7 @@ export interface IAtcfData {
     'lon': number | null;
     'maxSusWind': number | null;
     'minSeaLevelPsur': number | null;
+    'levelCode': string | null;
     'level': string | null;
     'windRad': IAtcfRad | null;
     'outerPsur': number | null;
@@ -125,6 +126,7 @@ export class AtcfData {
     public readonly lon: number | null = null;
     public readonly maxSusWind: number | null = null;
     public readonly minSeaLevelPsur: number | null = null;
+    public readonly levelCode: string | null = null;
     public readonly level: string | null = null;
     public readonly windRad: IAtcfRad | null = null;
     public readonly outerPsur: number | null = null;
@@ -193,6 +195,7 @@ export class AtcfData {
         this.minSeaLevelPsur = this.asInt(l[9]);
 
         // 10 - TY - Highest level of tc development:
+        this.levelCode = l[10] ?? null;
         this.level = this.getLevel(l[10]);
 
         //   0,         ,    0,    0,    0,    0,   1012,    150,  50,    40,   0,
@@ -407,7 +410,7 @@ export class AtcfData {
         return {
             'basin': this.basin,
             'stormNo': this.stormNo,
-            'date': this.date,
+            'date': this.date?.toISOString() ?? null,
             'techNum': this.techNum,
             'tech': this.tech,
             'tau': this.tau,
@@ -415,6 +418,7 @@ export class AtcfData {
             'lon': this.lon,
             'maxSusWind': this.maxSusWind,
             'minSeaLevelPsur': this.minSeaLevelPsur,
+            'levelCode': this.levelCode,
             'level': this.level,
             'windRad': this.windRad,
             'outerPsur': this.outerPsur,
