@@ -15,11 +15,11 @@ export const parseAtcf = (atcfText: string): AtcfFile =>
     new AtcfFile(atcfText);
 
 export interface IAtcfFile {
-    'data': IAtcfData[];
-    'genNo': number | null;
-    'invest': IAtcfFromTo | null;
-    'trans': IAtcfFromTo | null;
-    'diss': IAtcfFromTo | null;
+    data: IAtcfData[];
+    genNo: number | null;
+    invest: IAtcfFromTo | null;
+    trans: IAtcfFromTo | null;
+    diss: IAtcfFromTo | null;
 }
 
 export class AtcfFile {
@@ -50,11 +50,11 @@ export class AtcfFile {
 
     public toJSON(): IAtcfFile {
         return {
-            'data': this.data.map(d => d.toJSON()),
-            'genNo': this.genNo,
-            'invest': this.invest,
-            'trans': this.transitioned,
-            'diss': this.dissipated
+            data: this.data.map(d => d.toJSON()),
+            genNo: this.genNo,
+            invest: this.invest,
+            trans: this.transitioned,
+            diss: this.dissipated
         };
     }
 
@@ -81,37 +81,37 @@ export interface IAtcfFromTo {
 }
 
 export interface IAtcfData {
-    'basin': string | null;
-    'stormNo': number | null;
-    'date': string | null;
-    'techNum': string | null;
-    'tech': string | null;
-    'tau': number | null;
-    'lat': number | null;
-    'lon': number | null;
-    'maxSusWind': number | null;
-    'minSeaLevelPsur': number | null;
-    'levelCode': string | null;
-    'level': string | null;
-    'windRad': IAtcfRad | null;
-    'outerPsur': number | null;
-    'outerRad': number | null;
-    'maxWindRad': number | null;
-    'windGust': number | null;
-    'eyeDia': number | null;
-    'subRegion': string | null;
-    'maxSeas': number | null;
-    'forecaster': string | null;
-    'dir': number | null;
-    'speed': number | null;
-    'name': string | null;
-    'depth': string | null;
-    'seaRad': IAtcfRad | null;
-    'userData': {[key: string]: string};
-    'genNo': number | null;
-    'invest': IAtcfFromTo | null;
-    'trans': IAtcfFromTo | null;
-    'diss': IAtcfFromTo | null;
+    basin: string | null;
+    stormNo: number | null;
+    date: string | null;
+    techNum: string | null;
+    tech: string | null;
+    tau: number | null;
+    lat: number | null;
+    lon: number | null;
+    maxSusWind: number | null;
+    minSeaLevelPsur: number | null;
+    levelCode: string | null;
+    level: string | null;
+    windRad: IAtcfRad | null;
+    outerPsur: number | null;
+    outerRad: number | null;
+    maxWindRad: number | null;
+    windGust: number | null;
+    eyeDia: number | null;
+    subRegion: string | null;
+    maxSeas: number | null;
+    forecaster: string | null;
+    dir: number | null;
+    speed: number | null;
+    name: string | null;
+    depth: string | null;
+    seaRad: IAtcfRad | null;
+    userData: {[key: string]: string};
+    genNo: number | null;
+    invest: IAtcfFromTo | null;
+    trans: IAtcfFromTo | null;
+    diss: IAtcfFromTo | null;
 }
 
 export class AtcfData {
@@ -408,38 +408,38 @@ export class AtcfData {
 
     public toJSON(): IAtcfData {
         return {
-            'basin': this.basin,
-            'stormNo': this.stormNo,
-            'date': this.date?.toISOString() ?? null,
-            'techNum': this.techNum,
-            'tech': this.tech,
-            'tau': this.tau,
-            'lat': this.lat,
-            'lon': this.lon,
-            'maxSusWind': this.maxSusWind,
-            'minSeaLevelPsur': this.minSeaLevelPsur,
-            'levelCode': this.levelCode,
-            'level': this.level,
-            'windRad': this.windRad,
-            'outerPsur': this.outerPsur,
-            'outerRad': this.outerRad,
-            'maxWindRad': this.maxWindRad,
-            'windGust': this.windGust,
-            'eyeDia': this.eyeDia,
-            'subRegion': this.subRegion,
-            'maxSeas': this.maxSeas,
-            'forecaster': this.forecaster,
-            'dir': this.dir,
-            'speed': this.speed,
-            'name': this.name,
-            'depth': this.depth,
-            'seaRad': this.seaRad,
-            'userData': this.userData,
-            'genNo': this.genNo,
-            'invest': this.invest,
-            'trans': this.transitioned,
-            'diss': this.dissipated
-        }
+            basin: this.basin,
+            stormNo: this.stormNo,
+            date: this.date?.toISOString() ?? null,
+            techNum: this.techNum,
+            tech: this.tech,
+            tau: this.tau,
+            lat: this.lat,
+            lon: this.lon,
+            maxSusWind: this.maxSusWind,
+            minSeaLevelPsur: this.minSeaLevelPsur,
+            levelCode: this.levelCode,
+            level: this.level,
+            windRad: this.windRad,
+            outerPsur: this.outerPsur,
+            outerRad: this.outerRad,
+            maxWindRad: this.maxWindRad,
+            windGust: this.windGust,
+            eyeDia: this.eyeDia,
+            subRegion: this.subRegion,
+            maxSeas: this.maxSeas,
+            forecaster: this.forecaster,
+            dir: this.dir,
+            speed: this.speed,
+            name: this.name,
+            depth: this.depth,
+            seaRad: this.seaRad,
+            userData: this.userData,
+            genNo: this.genNo,
+            invest: this.invest,
+            trans: this.transitioned,
+            diss: this.dissipated
+        };
     }
 
 }
