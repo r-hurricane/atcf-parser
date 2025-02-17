@@ -1,0 +1,42 @@
+{
+  "name": "@r-hurricane/atcf-parser",
+  "version": "1.0.0-alpha.1",
+  "type": "module",
+  "description": "A library that can be used to parse into usable objects or JSON Automatic Tropical Cyclone Forecast (ATCF) text files published by the National Hurricane Center (NHC) or Joint Typhoon Warning Center (JTWC). NOTE: This is not an official NOAA/NHC/JTWC library.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "atcf2json": "./dist/bin/atcf2json.js"
+  },
+  "scripts": {
+    "build": "npx tsc -p tsconfig.json",
+    "test": " npm run build && node ./dist/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r-hurricane/atcf-parser.git"
+  },
+  "keywords": [
+    "National Hurricane Center",
+    "nhc",
+    "Joint Typhoon Warning Center",
+    "jtwc",
+    "Automatic Tyropical Cyclone Forecast",
+    "atcf"
+  ],
+  "contributors": [
+    {
+      "name": "Tyler Hadidon (Beach-Brews)",
+      "url": "https://thadidon.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/r-hurricane/atcf-parser/issues"
+  },
+  "homepage": "https://github.com/r-hurricane/atcf-parser#readme",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  }
+}
