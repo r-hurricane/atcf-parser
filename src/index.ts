@@ -76,8 +76,8 @@ export interface IAtcfStormCode {
 }
 
 export interface IAtcfFromTo {
-    from: IAtcfStormCode | null,
-    to: IAtcfStormCode | null
+    from: IAtcfStormCode,
+    to: IAtcfStormCode
 }
 
 export interface IAtcfData {
@@ -304,24 +304,24 @@ export class AtcfData {
     private getLevel(str: string | undefined): string | null {
         // 10 - TY - Highest level of tc development:
         switch (str?.toUpperCase()) {
-            case "DB": return "disturbance";
-            case "TD": return "tropical depression";
-            case "TS": return "tropical storm";
-            case "TY": return "typhoon,";
-            case "ST": return "super typhoon";
-            case "TC": return "tropical cyclone";
-            case "HU": return "hurricane";
-            case "SD": return "subtropical depression";
-            case "SS": return "subtropical storm";
-            case "EX": return "extratropical system";
-            case "PT": return "post tropical";
-            case "IN": return "inland";
-            case "DS": return "dissipating";
-            case "LO": return "low";
-            case "WV": return "tropical wave";
-            case "ET": return "extrapolated";
-            case "MD": return "monsoon depression";
-            case "XX": return "unknown";
+            case "DB": return "Disturbance";
+            case "TD": return "Tropical Depression";
+            case "TS": return "Tropical Storm";
+            case "TY": return "Typhoon,";
+            case "ST": return "Super Typhoon";
+            case "TC": return "Tropical Cyclone";
+            case "HU": return "Hurricane";
+            case "SD": return "Subtropical Depression";
+            case "SS": return "Subtropical Storm";
+            case "EX": return "Extratropical System";
+            case "PT": return "Post Tropical";
+            case "IN": return "Inland";
+            case "DS": return "Dissipating";
+            case "LO": return "Low";
+            case "WV": return "Tropical Wave";
+            case "ET": return "Extrapolated";
+            case "MD": return "Monsoon Depression";
+            case "XX": return "Unknown";
             default: return str ?? null;
         }
     }
