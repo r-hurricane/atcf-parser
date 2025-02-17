@@ -4,8 +4,10 @@
  * NOTE: This is not an official NHC/JTWC library.
  *
  * Parses an ATCF text file into a JavaScript object.
+ * Documentation on the ATCF format can be found here:
+ * https://science.nrlmry.navy.mil/atcf/docs/database/new/abdeck.txt
  *
- * Copyright (c) 2024, Tyler Hadidon (Beach-Brews)
+ * Copyright (c) 2025, Tyler Hadidon (Beach-Brews)
  * Released under the MIT License.
  */
 

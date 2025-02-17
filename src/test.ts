@@ -5,7 +5,7 @@
  *
  * Helper test script that, provided a directory, parses each .dat file and compares against the same named .json
  *
- * Copyright (c) 2024, Tyler Hadidon (Beach-Brews)
+ * Copyright (c) 2025, Tyler Hadidon (Beach-Brews)
  * Released under the MIT License.
  */
 
